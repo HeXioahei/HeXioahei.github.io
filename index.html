@@ -1,1 +1,308 @@
-<h1>Welcome!</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jiajin He · Personal Page</title>
+    <!-- Font Awesome (free) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <style>
+        /* ---------- reset & base ---------- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: #f8fafc;
+            color: #0f172a;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1.5rem;
+            line-height: 1.6;
+        }
+
+        /* ---------- card ---------- */
+        .card {
+            max-width: 800px;
+            width: 100%;
+            background: #ffffff;
+            border-radius: 2.5rem;
+            padding: 3rem 2.5rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+            transition: transform 0.2s ease;
+            border: 1px solid rgba(226, 232, 240, 0.6);
+        }
+
+        @media (max-width: 480px) {
+            .card {
+                padding: 2rem 1.5rem;
+                border-radius: 1.8rem;
+            }
+        }
+
+        /* ---------- avatar ---------- */
+        .avatar {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1.8rem;
+        }
+
+        .avatar img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            background: #e2e8f0;
+            border: 4px solid #ffffff;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+        }
+
+        /* ---------- name & title ---------- */
+        .name {
+            text-align: center;
+            font-size: 2.4rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.3rem;
+            color: #0f172a;
+        }
+
+        .title {
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: #64748b;
+            margin-bottom: 1.2rem;
+            letter-spacing: 0.3px;
+        }
+
+        /* ---------- bio ---------- */
+        .bio {
+            text-align: center;
+            font-size: 1.05rem;
+            color: #334155;
+            max-width: 540px;
+            margin: 0 auto 2rem auto;
+            padding: 0 0.2rem;
+        }
+
+        /* ---------- socials ---------- */
+        .socials {
+            display: flex;
+            justify-content: center;
+            gap: 1.2rem;
+            flex-wrap: wrap;
+            margin-bottom: 2.5rem;
+        }
+
+        .socials a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: #f1f5f9;
+            color: #1e293b;
+            font-size: 1.3rem;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            border: 1px solid transparent;
+        }
+
+        .socials a:hover {
+            background: #0f172a;
+            color: #ffffff;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 18px rgba(15, 23, 42, 0.12);
+            border-color: #0f172a;
+        }
+
+        /* ---------- divider ---------- */
+        .divider {
+            width: 60px;
+            height: 3px;
+            background: #e2e8f0;
+            margin: 0 auto 2.5rem auto;
+            border-radius: 6px;
+        }
+
+        /* ---------- tags ---------- */
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.7rem 0.9rem;
+            margin-bottom: 2.8rem;
+        }
+
+        .tags span {
+            background: #f1f5f9;
+            padding: 0.4rem 1.2rem;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            font-weight: 450;
+            color: #1e293b;
+            letter-spacing: 0.2px;
+            border: 1px solid #e9edf3;
+            transition: background 0.15s ease;
+        }
+
+        .tags span:hover {
+            background: #e2e8f0;
+        }
+
+        /* ---------- CTA buttons ---------- */
+        .cta {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .cta .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.8rem 2.2rem;
+            border-radius: 60px;
+            font-weight: 550;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            border: 1px solid transparent;
+            background: #0f172a;
+            color: #ffffff;
+            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.10);
+        }
+
+        .cta .btn i {
+            font-size: 1rem;
+        }
+
+        .cta .btn-outline {
+            background: transparent;
+            color: #0f172a;
+            border-color: #d1d9e6;
+            box-shadow: none;
+        }
+
+        .cta .btn-outline:hover {
+            background: #f1f5f9;
+            border-color: #b3c2d6;
+            transform: translateY(-2px);
+        }
+
+        .cta .btn-primary:hover {
+            background: #1e293b;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 22px -6px rgba(15, 23, 42, 0.25);
+        }
+
+        /* ---------- footer ---------- */
+        .footer {
+            margin-top: 3rem;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #94a3b8;
+            border-top: 1px solid #edf2f7;
+            padding-top: 2rem;
+            letter-spacing: 0.2px;
+        }
+
+        .footer span {
+            color: #cbd5e1;
+        }
+
+        /* ---------- responsive tweaks ---------- */
+        @media (max-width: 460px) {
+            .name {
+                font-size: 2rem;
+            }
+            .bio {
+                font-size: 0.98rem;
+            }
+            .cta .btn {
+                padding: 0.7rem 1.6rem;
+                font-size: 0.95rem;
+                width: 100%;
+                justify-content: center;
+            }
+            .socials a {
+                width: 44px;
+                height: 44px;
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+
+        <!-- Avatar with initials "JH" (using UI Avatars) -->
+        <div class="avatar">
+            <img
+            src="https://ui-avatars.com/api/?name=Jiajin+He&size=120&background=e2e8f0&color=0f172a&font-size=0.5&bold=true&rounded=true"
+            alt="Jiajin He avatar"
+            />
+        </div>
+
+        <!-- Name & Title -->
+        <h1 class="name">Jiajin He</h1>
+        <p class="title">Undergraduate Student @ Fuzhou University</p>
+
+        <!-- Bio -->
+        <p class="bio">
+            Curious about software engineering, web development, and human‑centered design.
+            I enjoy building clean, functional projects and learning new technologies.
+        </p>
+
+        <!-- Social Links -->
+        <div class="socials">
+            <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="#" aria-label="Twitter / X"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Dribbble"><i class="fab fa-dribbble"></i></a>
+            <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        </div>
+
+        <!-- Divider -->
+        <div class="divider"></div>
+
+        <!-- Skills / Interests -->
+        <div class="tags">
+            <span>Java</span>
+            <span>Python</span>
+            <span>JavaScript</span>
+            <span>React</span>
+            <span>Node.js</span>
+            <span>UI/UX</span>
+            <span>Data Science</span>
+            <span>Open Source</span>
+        </div>
+
+        <!-- Call to action -->
+        <div class="cta">
+            <a href="#" class="btn btn-primary">
+                <i class="fas fa-paper-plane"></i> Contact Me
+            </a>
+            <a href="#" class="btn btn-outline">
+                <i class="fas fa-arrow-right"></i> Portfolio
+            </a>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <span>© 2026 Jiajin He · Built with ❤️</span>
+        </div>
+
+    </div>
+
+</body>
+</html>
